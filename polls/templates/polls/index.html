@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+{% if latest_question_list %}
+<ul>
+    {% for question in latest_question_list %}
+    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+
+
+
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+
+<!-- Background image -->
+<div class="bg-image" style="
+    background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/012.webp');
+    height: 100vh;
+  ">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <h1 class="text-white mb-0">Page title</h1>
+        </div>
+    </div>
+</div>
+<!-- Background image -->

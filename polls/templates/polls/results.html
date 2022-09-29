@@ -1,0 +1,25 @@
+<center>
+    <h1>{{ question.question_text }}</h1>
+
+    <ul>
+        {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+
+
+    </ul>
+
+
+
+    <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+</center>
+
+
+<!-- Background image -->
+<div class="bg-image d-flex justify-content-center align-items-center" style="
+    background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/015.webp');
+    height: 100vh;
+  ">
+    <h1 class="text-white">Page title</h1>
+</div>
+<!-- Background image -->
